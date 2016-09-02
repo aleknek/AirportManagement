@@ -1,0 +1,209 @@
+/************************************HEADER BEGIN**********************************************/
+body {
+    font: .8em Comic Sans MS;
+    background: #F8F8FF;
+}
+
+.header {
+    background: #FFF;
+    outline: 1px solid #000;
+    height: 20px;
+    padding: 1px 0px 18px 0px;
+    font-size: 26px;
+    margin: 0px 0px 20px 0px;
+    text-align: center;
+    background: url('/resources/image/logo.jpg') no-repeat left center;
+    background-position: 35px;
+}
+
+#sidebarL {
+    width: 17.7%;
+    float: left;
+}
+
+#sidebarR {
+    padding: 0;
+    width: 17.7%;
+    float: right;
+}
+
+#content {
+    height: 77px;
+    margin-left: 17.7%;
+    width: 64.5%;
+}
+
+.refHome {
+    font-size: 12px;
+    margin: 40px 10px;
+}
+
+.refBack {
+    padding: 0px 20px;
+    font-size: 12px;
+    margin: 40px 0px;
+}
+
+.refLogout {
+    font-size: 15px;
+    margin: 7px 10px;
+    float: left;
+}
+
+.refHome, .refBack, .refLogout {
+    display: inline;
+    float: left;
+    outline: none;
+}
+
+.refFlights {
+    text-align: left;
+    font-size: 15px;
+    outline: none;
+    width: 320px;
+}
+
+.refPriceList {
+    text-align: center;
+    font-size: 15px;
+    outline: none
+}
+
+.refSearch {
+    text-align: right;
+    font-size: 15px;
+    outline: none;
+}
+
+.tableHome {
+    width: 870px;
+}
+
+.tableCreatingAndModifying {
+    border-spacing: 8px;
+}
+
+.tableFlightAndPassenger {
+    border: 1px solid grey;
+    border-spacing: 0px;
+    width: 875px;
+    border-color: #C3C3C3;
+    margin-top: 20px;
+}
+
+.tablePrice {
+    border-spacing: 0px;
+    width: 420px;
+    height: 100px;
+}
+
+.tableSearch {
+    margin: 20px -8px;
+}
+
+.buttonView, .buttonModifying, .buttonCreate, .buttonDelete {
+    width: 200px;
+    height: 25px;
+    background: #D3D3D3;
+    font: 13px Comic Sans MS;
+    margin: 5px;
+    border-radius: 8px;
+}
+
+.buttonDisplayDepartures {
+    width: 200px;
+    height: 35px;
+    border-radius: 8px;
+    margin-left: 220px;
+    background: #D3D3D3;
+    font: 17px Comic Sans MS;
+}
+
+.buttonDisplayArrivals {
+    width: 200px;
+    height: 35px;
+    border-radius: 8px;
+    margin: 6px;
+    background: #D3D3D3;
+    font: 17px Comic Sans MS;
+}
+
+.tdColumn, .thCheckBox, .thColumn {
+    border: 1px solid;
+    padding: 5px;
+    border-color: #C3C3C3;
+}
+
+.tdPrice, .thPrice {
+    border: 1px solid grey;
+    padding: 5px;
+}
+
+.column {
+    font-size: .9em;
+    text-align: right;
+}
+
+.thCheckBox {
+    width: 10%;
+}
+
+#checkbox {
+    text-align: center;
+    vertical-align: middle;
+}
+
+th {
+    background: #D3D3D3;
+    text-align: left;
+    font-size: .9em;
+    font-weight: 600;
+}
+
+caption {
+    caption-side: top;
+    text-align: left;
+}
+
+select {
+    padding: 3px;
+    margin: 0;
+    width: 160px;
+}
+/************************************HEADER END******************************************************/
+
+/************************************PAGE "login.jsp" BEGIN******************************************/
+.login_form_container {
+    margin: 50px auto;
+    width: 330px;
+}
+
+.login_form_container table#login_table {
+    width: 100%;
+    border: 2px solid #8B8386;
+    line-height: 30px;
+}
+
+.login_form_container table .caption {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 2px solid #8B8386;
+}
+
+/************************************PAGE "login.jsp" END****************************************/
+
+/************************************PAGE "ErrorMessage.jsp" BEGIN****************************/
+table#ErrorMessage {
+    width: 100%;
+    line-height: 120px;
+}
+
+.errorMessage {
+    color: red;
+    font-family: sans-serif;
+    font-style: italic;
+    font-size: large;
+    text-align: left;
+}
+/************************************PAGE "ErrorMessage.jsp" END****************************/
