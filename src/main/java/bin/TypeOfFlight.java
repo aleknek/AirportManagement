@@ -1,6 +1,8 @@
 package bin;
 
-public enum TypeOfFlight {
+import java.io.Serializable;
+
+public enum TypeOfFlight implements Serializable {
     arrival,
     departure
 }

@@ -1,6 +1,8 @@
 package bin;
 
-public class PriceList {
+import java.io.Serializable;
+
+public class PriceList implements Serializable {
 
     private Flight flight;
     private FlightClass flightClass;

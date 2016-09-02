@@ -1,6 +1,8 @@
 package bin;
 
-public enum FlightStatus {
+import java.io.Serializable;
+
+public enum FlightStatus implements Serializable {
     checkIn("check-in"),
     gateClosed("gate closed"),
     arrived("arrived"),

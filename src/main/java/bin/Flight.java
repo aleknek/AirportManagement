@@ -1,6 +1,8 @@
 package bin;
 
-public class Flight {
+import java.io.Serializable;
+
+public class Flight implements Serializable {
 
     private int id;
     private String number;
