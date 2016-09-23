@@ -38,6 +38,7 @@ public class RoleDAO {
 
     public List<Role> loadRoleByIdAccount(int idAccount) {
 
+        java.sql.Connection conn = DBConnection.getInstance().getConn();
         List<Role> roles = new ArrayList<Role>();
         try {
             String sqlQuery;
@@ -46,7 +47,7 @@ public class RoleDAO {
                     "ON link_role_account.id_role = role.id " +
                     "WHERE link_role_account.id_account = '" + idAccount + "'";
 
-            PreparedStatement preparedStatement = DBConnection.getInstance().getConn().prepareStatement(sqlQuery);
+            PreparedStatement preparedStatement = conn.prepareStatement(sqlQuery);
             rs = preparedStatement.executeQuery();
             rs = preparedStatement.executeQuery();
             while (rs.next()) {
