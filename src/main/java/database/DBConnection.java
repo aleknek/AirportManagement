@@ -1,13 +1,15 @@
 package database;
 
 import constants.Constants;
+
 import java.sql.*;
 
 public class DBConnection {
 
-   private static Connection conn;
+    private static Connection conn;
+    private static DBConnection instance;
 
-    public DBConnection() {
+    private DBConnection() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             conn = DriverManager.getConnection(Constants.URL_TO_DATABASE);
@@ -18,6 +20,14 @@ public class DBConnection {
 
     public static Connection getConn() {
         return conn;
+    }
+
+    public static synchronized DBConnection getInstance() {
+
+        if (instance == null) {
+            instance = new DBConnection();
+        }
+        return instance;
     }
 
     public static void runPrepareStatement(String sqlQuery, String[] values, int id) {
@@ -39,6 +49,4 @@ public class DBConnection {
             e.printStackTrace();
         }
     }
-
-
 }

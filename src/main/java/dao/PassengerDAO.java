@@ -36,7 +36,7 @@ public class PassengerDAO {
                     "ON id_gender = gender.id " +
                     "WHERE id_flight = " + idFlight;
 
-            PreparedStatement preparedStatement = new DBConnection().getConn().prepareStatement(sqlQuery);
+            PreparedStatement preparedStatement = DBConnection.getInstance().getConn().prepareStatement(sqlQuery);
 
             rs = preparedStatement.executeQuery();
             while (rs.next()) {
@@ -75,7 +75,7 @@ public class PassengerDAO {
                     "ON id_gender = gender.id " +
                     "WHERE pass.id = " + idPassenger;
 
-            PreparedStatement preparedStatement = new DBConnection().getConn().prepareStatement(sqlQuery);
+            PreparedStatement preparedStatement = DBConnection.getInstance().getConn().prepareStatement(sqlQuery);
 
             rs = preparedStatement.executeQuery();
             while (rs.next()) {
@@ -106,7 +106,7 @@ public class PassengerDAO {
                     "ON passenger.id = tickets.id_passenger " +
                     "WHERE passenger.firstName = " + "'" + firstName + "' AND passenger.lastName = '" + lastName + "'";
 
-            PreparedStatement preparedStatement = new DBConnection().getConn().prepareStatement(sqlQuery);
+            PreparedStatement preparedStatement = DBConnection.getInstance().getConn().prepareStatement(sqlQuery);
 
             rs = preparedStatement.executeQuery();
             while (rs.next()) {
@@ -130,7 +130,7 @@ public class PassengerDAO {
                     "ON passenger.id = tickets.id_passenger " +
                     "WHERE passenger.passport = " + "'" + passport + "'";
 
-            PreparedStatement preparedStatement = new DBConnection().getConn().prepareStatement(sqlQuery);
+            PreparedStatement preparedStatement = DBConnection.getInstance().getConn().prepareStatement(sqlQuery);
 
             rs = preparedStatement.executeQuery();
             while (rs.next()) {
@@ -144,7 +144,7 @@ public class PassengerDAO {
 
     public void deletePassengers(List<Integer> idsPassengers) {
 
-        DBConnection dbConnection = new DBConnection();
+        DBConnection dbConnection = DBConnection.getInstance();
 
         for (Iterator<Integer> iterator = idsPassengers.iterator(); iterator.hasNext(); ) {
             String id = iterator.next().toString();
@@ -156,7 +156,7 @@ public class PassengerDAO {
 
     public void passengerCreating(Passenger passenger, String idFlight) {
 
-        DBConnection dbConnection = new DBConnection();
+        DBConnection dbConnection = DBConnection.getInstance();
 
         String[] values = {passenger.getFirstName(), passenger.getLastName(), passenger.getNationality(), passenger.getPassport(),
                 passenger.getDateOfBirthday(), String.valueOf(passenger.getGender().ordinal() + 1)};
@@ -172,7 +172,7 @@ public class PassengerDAO {
 
     public void passengerModifying(String[] valuesForUpdatePassenger, String idFlight, String idClass, String id) {
 
-        DBConnection dbConnection = new DBConnection();
+        DBConnection dbConnection = DBConnection.getInstance();
 
         dbConnection.runPrepareStatement("UPDATE passenger SET firstName = ?, lastName = ?, nationality = ?, passport = ?," +
                 " dateOfBirthday = ?, id_gender = ? WHERE id= ?;", valuesForUpdatePassenger, Integer.valueOf(id));
@@ -189,7 +189,7 @@ public class PassengerDAO {
             String sqlQuery;
             sqlQuery = "SELECT id FROM db_airport.passenger WHERE passport = " + "'" + numberPassport + "'";
 
-            PreparedStatement preparedStatement = new DBConnection().getConn().prepareStatement(sqlQuery);
+            PreparedStatement preparedStatement = DBConnection.getInstance().getConn().prepareStatement(sqlQuery);
 
             rs = preparedStatement.executeQuery();
             if (rs.next()) {

@@ -52,7 +52,7 @@ public class FlightWorkerDAO {
 
     public void flightModifying(String[] values, int id) {
 
-        new DBConnection().runPrepareStatement("UPDATE flights SET number = ?, date = ?, terminal = ?, gate = ?, " +
+        DBConnection.getInstance().runPrepareStatement("UPDATE flights SET number = ?, date = ?, terminal = ?, gate = ?, " +
                 "id_status = ?, id_city = ?  WHERE id= ?;", values, id);
     }
 
@@ -61,13 +61,13 @@ public class FlightWorkerDAO {
         String[] values = {flight.getNumber(), flight.getDateOfDeparture(), flight.getTerminal(),
                 flight.getGate(), String.valueOf(flight.getStatusOfFlight().ordinal() + 1), String.valueOf(flight.getTypeOfFlight().ordinal() + 1),
                 String.valueOf(new CityDAO().getIdCity(flight.getCity().getName()))};
-        new DBConnection().runPrepareStatement("INSERT INTO db_airport.flights(number, date, terminal, gate, id_status, id_type_flight," +
+        DBConnection.getInstance().runPrepareStatement("INSERT INTO db_airport.flights(number, date, terminal, gate, id_status, id_type_flight," +
                 " id_city) values (?, ?, ?, ?, ?, ?, ?)", values, 0);
     }
 
     public void deleteFlights(List<Integer> idFlights) {
 
-        DBConnection dbConnection = new DBConnection();
+        DBConnection dbConnection = DBConnection.getInstance();
 
         for (Iterator<Integer> iterator = idFlights.iterator(); iterator.hasNext(); ) {
             String id = iterator.next().toString();

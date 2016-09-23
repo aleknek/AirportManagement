@@ -36,7 +36,7 @@ public class FlightDAO {
                     "WHERE flights.id_type_flight =  " + (typeOfFlight.ordinal() + 1) + " " +
                     "ORDER BY date";
 
-            PreparedStatement preparedStatement = new DBConnection().getConn().prepareStatement(sqlQuery);
+            PreparedStatement preparedStatement = DBConnection.getInstance().getConn().prepareStatement(sqlQuery);
 
             rs = preparedStatement.executeQuery();
             while (rs.next()) {
@@ -68,7 +68,7 @@ public class FlightDAO {
                     "ON id_type_flight = type_flight.id " +
                     "ORDER BY city";
 
-            PreparedStatement preparedStatement = new DBConnection().getConn().prepareStatement(sqlQuery);
+            PreparedStatement preparedStatement = DBConnection.getInstance().getConn().prepareStatement(sqlQuery);
 
             rs = preparedStatement.executeQuery();
             while (rs.next()) {
@@ -100,7 +100,7 @@ public class FlightDAO {
                     "ON id_type_flight = type_flight.id " +
                     "WHERE flights.id = " + id;
 
-            PreparedStatement preparedStatement = new DBConnection().getConn().prepareStatement(sqlQuery);
+            PreparedStatement preparedStatement = DBConnection.getInstance().getConn().prepareStatement(sqlQuery);
 
             rs = preparedStatement.executeQuery();
             if (rs.next()) {
@@ -130,7 +130,7 @@ public class FlightDAO {
                     "ON id_type_flight = type_flight.id " +
                     "WHERE flights.number = " + "'" + numberFlight + "'";
 
-            PreparedStatement preparedStatement = new DBConnection().getConn().prepareStatement(sqlQuery);
+            PreparedStatement preparedStatement = DBConnection.getInstance().getConn().prepareStatement(sqlQuery);
 
             rs = preparedStatement.executeQuery();
             if (rs.next()) {
@@ -166,7 +166,7 @@ public class FlightDAO {
                     "ON id_type_flight = type_flight.id " +
                     "WHERE flights.id IN (" + lineIdsForSqlQuery + ") AND flights.id_type_flight =  " + (typeOfFlight.ordinal() + 1);
 
-            PreparedStatement preparedStatement = new DBConnection().getConn().prepareStatement(sqlQuery);
+            PreparedStatement preparedStatement = DBConnection.getInstance().getConn().prepareStatement(sqlQuery);
 
             rs = preparedStatement.executeQuery();
             while (rs.next()) {
@@ -198,7 +198,7 @@ public class FlightDAO {
                     "ON id_type_flight = type_flight.id " +
                     "WHERE city.name = '" + nameCity + "' AND flights.id_type_flight =  " + (typeOfFlight.ordinal() + 1);
 
-            PreparedStatement preparedStatement = new DBConnection().getConn().prepareStatement(sqlQuery);
+            PreparedStatement preparedStatement = DBConnection.getInstance().getConn().prepareStatement(sqlQuery);
 
             rs = preparedStatement.executeQuery();
             while (rs.next()) {
@@ -232,7 +232,7 @@ public class FlightDAO {
                     "ON flights.id = price.id_flight " +
                     "WHERE price.price =  " + price + " AND type_flight.id = " + (typeOfFlight.ordinal() + 1);
 
-            PreparedStatement preparedStatement = new DBConnection().getConn().prepareStatement(sqlQuery);
+            PreparedStatement preparedStatement = DBConnection.getInstance().getConn().prepareStatement(sqlQuery);
 
             rs = preparedStatement.executeQuery();
             while (rs.next()) {

@@ -22,7 +22,7 @@ public class AccountDAO {
                     "ON link_role_account_table1.id = link_role_account_table2.id AND link_role_account_table2.id_account = '" + idAccount + "' " +
                     "WHERE link_role_account_table1.id_role = '" + idRole + "' AND NOT link_role_account_table2.id IS NULL ";
 
-            PreparedStatement preparedStatement = new DBConnection().getConn().prepareStatement(sqlQuery);
+            PreparedStatement preparedStatement = DBConnection.getInstance().getConn().prepareStatement(sqlQuery);
             rs = preparedStatement.executeQuery();
             return rs.next();
         } catch (SQLException e) {
@@ -36,7 +36,7 @@ public class AccountDAO {
         Account account = new Account();
 
         try {
-            PreparedStatement preparedStatement = new DBConnection().getConn().prepareStatement("SELECT * FROM db_airport.account WHERE login = ? AND password = ?");
+            PreparedStatement preparedStatement = DBConnection.getInstance().getConn().prepareStatement("SELECT * FROM db_airport.account WHERE login = ? AND password = ?");
             preparedStatement.setString(1, login);
             preparedStatement.setString(2, password);
             rs = preparedStatement.executeQuery();

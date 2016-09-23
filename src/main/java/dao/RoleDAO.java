@@ -22,7 +22,7 @@ public class RoleDAO {
             String sqlQuery;
             sqlQuery = "SELECT * FROM role";
 
-            PreparedStatement preparedStatement = new DBConnection().getConn().prepareStatement(sqlQuery);
+            PreparedStatement preparedStatement = DBConnection.getInstance().getConn().prepareStatement(sqlQuery);
             rs = preparedStatement.executeQuery();
             while (rs.next()) {
                 Role role = new Role();
@@ -46,7 +46,7 @@ public class RoleDAO {
                     "ON link_role_account.id_role = role.id " +
                     "WHERE link_role_account.id_account = '" + idAccount + "'";
 
-            PreparedStatement preparedStatement = new DBConnection().getConn().prepareStatement(sqlQuery);
+            PreparedStatement preparedStatement = DBConnection.getInstance().getConn().prepareStatement(sqlQuery);
             rs = preparedStatement.executeQuery();
             rs = preparedStatement.executeQuery();
             while (rs.next()) {

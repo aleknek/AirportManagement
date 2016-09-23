@@ -26,7 +26,7 @@ public class PriceDAO {
                     "id_class = class_flight.id " +
                     "WHERE id_flight = " + flight.getId();
 
-            PreparedStatement preparedStatement = new DBConnection().getConn().prepareStatement(sqlQuery);
+            PreparedStatement preparedStatement = DBConnection.getInstance().getConn().prepareStatement(sqlQuery);
 
             rs = preparedStatement.executeQuery();
             while (rs.next()) {

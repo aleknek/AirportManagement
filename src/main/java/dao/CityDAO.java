@@ -23,7 +23,7 @@ public class CityDAO {
             sqlQuery = "SELECT city.id AS id FROM db_airport.cities AS city " +
                     "WHERE city.name = " + "'" + cityName + "'";
 
-            PreparedStatement preparedStatement = new DBConnection().getConn().prepareStatement(sqlQuery);
+            PreparedStatement preparedStatement = DBConnection.getInstance().getConn().prepareStatement(sqlQuery);
 
             rs = preparedStatement.executeQuery();
             if (rs.next()) {
@@ -49,7 +49,7 @@ public class CityDAO {
 
             sqlQuery = "SELECT * FROM db_airport.cities";
 
-            PreparedStatement preparedStatement = new DBConnection().getConn().prepareStatement(sqlQuery);
+            PreparedStatement preparedStatement = DBConnection.getInstance().getConn().prepareStatement(sqlQuery);
 
             rs = preparedStatement.executeQuery();
             while (rs.next()) {
@@ -70,7 +70,7 @@ public class CityDAO {
         String sqlQuery = "INSERT INTO db_airport.cities(name) values (" + "'" + cityName + "'" + ")";
         PreparedStatement preparedStatement = null;
         try {
-            preparedStatement = new DBConnection().getConn().prepareStatement(sqlQuery);
+            preparedStatement = DBConnection.getInstance().getConn().prepareStatement(sqlQuery);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
