@@ -2,7 +2,7 @@ package dao;
 
 import java.util.List;
 
-import bin.City;
+import bean.City;
 import database.DBConnection;
 
 import java.sql.PreparedStatement;

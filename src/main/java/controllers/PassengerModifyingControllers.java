@@ -1,6 +1,6 @@
 package controllers;
 
-import bin.*;
+import bean.*;
 import dao.FlightDAO;
 import dao.FlightWorkerDAO;
 import dao.PassengerDAO;

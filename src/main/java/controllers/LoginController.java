@@ -3,8 +3,8 @@ package controllers;
 import constants.Constants;
 import dao.AccountDAO;
 import dao.RoleDAO;
-import bin.Account;
-import bin.Role;
+import bean.Account;
+import bean.Role;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

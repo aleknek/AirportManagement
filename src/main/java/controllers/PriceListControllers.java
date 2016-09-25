@@ -2,8 +2,8 @@ package controllers;
 
 import dao.FlightDAO;
 import dao.PriceDAO;
-import bin.Flight;
-import bin.PriceList;
+import bean.Flight;
+import bean.PriceList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

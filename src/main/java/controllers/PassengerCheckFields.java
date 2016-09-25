@@ -1,8 +1,8 @@
 package controllers;
 
-import bin.FlightClass;
-import bin.Gender;
-import bin.Passenger;
+import bean.FlightClass;
+import bean.Gender;
+import bean.Passenger;
 import dao.FlightDAO;
 import dao.FlightWorkerDAO;
 import dao.PassengerDAO;

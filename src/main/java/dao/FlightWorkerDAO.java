@@ -1,9 +1,9 @@
 package dao;
 
-import bin.City;
-import bin.Flight;
-import bin.FlightStatus;
-import bin.TypeOfFlight;
+import bean.City;
+import bean.Flight;
+import bean.FlightStatus;
+import bean.TypeOfFlight;
 import constants.Constants;
 import database.DBConnection;
 

@@ -3,8 +3,8 @@ package controllers;
 import dao.FlightDAO;
 import dao.FlightWorkerDAO;
 import dao.PassengerDAO;
-import bin.Flight;
-import bin.Passenger;
+import bean.Flight;
+import bean.Passenger;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

@@ -1,20 +1,20 @@
-package bin;
+package bean;
 
 import java.io.Serializable;
 
-public class City implements Serializable {
+public class Role implements Serializable {
 
-    private int id;
+    private Integer id;
     private String name;
 
-    public City() {
+    public Role() {
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -26,35 +26,30 @@ public class City implements Serializable {
         this.name = name;
     }
 
-    public City(String name) {
-        this.name = name;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof City)) return false;
+        if (!(o instanceof Role)) return false;
 
-        City city = (City) o;
+        Role role = (Role) o;
 
-        if (getId() != city.getId()) return false;
-        return getName().equals(city.getName());
+        if (!getId().equals(role.getId())) return false;
+        return getName().equals(role.getName());
 
     }
 
     @Override
     public int hashCode() {
-        int result = getId();
+        int result = getId().hashCode();
         result = 31 * result + getName().hashCode();
         return result;
     }
 
     @Override
     public String toString() {
-        return "City{" +
+        return "Role{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 '}';
     }
 }
-

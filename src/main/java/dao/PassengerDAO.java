@@ -1,8 +1,8 @@
 package dao;
 
-import bin.FlightClass;
-import bin.Gender;
-import bin.Passenger;
+import bean.FlightClass;
+import bean.Gender;
+import bean.Passenger;
 import database.DBConnection;
 
 import java.sql.PreparedStatement;

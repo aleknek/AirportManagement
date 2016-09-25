@@ -1,7 +1,7 @@
 package controllers;
 
 import dao.RoleDAO;
-import bin.Role;
+import bean.Role;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

@@ -1,8 +1,8 @@
 package dao;
 
-import bin.Flight;
-import bin.FlightClass;
-import bin.PriceList;
+import bean.Flight;
+import bean.FlightClass;
+import bean.PriceList;
 import database.DBConnection;
 
 import java.sql.PreparedStatement;

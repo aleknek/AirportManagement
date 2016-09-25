@@ -1,8 +1,8 @@
 package controllers;
 
-import bin.TypeOfFlight;
+import bean.TypeOfFlight;
 import dao.FlightDAO;
-import bin.Flight;
+import bean.Flight;
 import dao.FlightWorkerDAO;
 
 import javax.servlet.ServletException;

@@ -1,7 +1,7 @@
 package dao;
 
-import bin.Flight;
-import bin.TypeOfFlight;
+import bean.Flight;
+import bean.TypeOfFlight;
 import database.DBConnection;
 
 import java.sql.*;

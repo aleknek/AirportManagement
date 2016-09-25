@@ -1,7 +1,7 @@
 package controllers;
 
-import bin.Flight;
-import bin.TypeOfFlight;
+import bean.Flight;
+import bean.TypeOfFlight;
 import dao.CityDAO;
 import dao.FlightDAO;
 import dao.PassengerDAO;

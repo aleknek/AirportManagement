@@ -1,6 +1,6 @@
 package dao;
 
-import bin.Role;
+import bean.Role;
 import database.DBConnection;
 
 import java.sql.PreparedStatement;

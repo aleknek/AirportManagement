@@ -1,10 +1,10 @@
 package controllers;
 
-import bin.TypeOfFlight;
+import bean.TypeOfFlight;
 import dao.CityDAO;
-import bin.City;
-import bin.Flight;
-import bin.FlightStatus;
+import bean.City;
+import bean.Flight;
+import bean.FlightStatus;
 import dao.FlightWorkerDAO;
 
 import javax.servlet.ServletException;

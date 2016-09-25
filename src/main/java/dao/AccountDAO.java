@@ -1,7 +1,7 @@
 package dao;
 
-import bin.Account;
-import bin.Role;
+import bean.Account;
+import bean.Role;
 import database.DBConnection;
 
 import java.sql.PreparedStatement;

@@ -2,8 +2,8 @@ package controllers;
 
 import dao.CityDAO;
 import dao.FlightDAO;
-import bin.Flight;
-import bin.FlightStatus;
+import bean.Flight;
+import bean.FlightStatus;
 import dao.FlightWorkerDAO;
 
 import javax.servlet.ServletException;
